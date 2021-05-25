@@ -49,8 +49,10 @@ body {
 
   &__text {
     width: 31vw;
-    text-align: center;
 
+    @media (max-width: $breakpoint-mobile) {
+      text-align: center;
+    }
     h1 {
       color: $main-color;
       font-size: 3.5vw;

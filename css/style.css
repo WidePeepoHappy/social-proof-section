@@ -55,7 +55,12 @@ body {
 
 .header__text {
   width: 31vw;
-  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .header__text {
+    text-align: center;
+  }
 }
 
 .header__text h1 {
