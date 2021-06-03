@@ -4,7 +4,9 @@ $main-color: hsl(300, 43%, 22%);
 $secondary-color: hsl(303, 10%, 53%);
 $verified: hsl(333, 80%, 67%);
 $on-main: hsl(300, 24%, 96%);
-$breakpoint-mobile: 1024px;
+$breakpoint-narrow: 1200px;
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 600px;
 
 * {
   margin: 0;
@@ -16,65 +18,85 @@ body {
   font-family: "Spartan", sans-serif;
   font-size: 15px;
   background: no-repeat url(../images/bg-pattern-top-desktop.svg),
-    no-repeat url(../images/bg-pattern-bottom-desktop.svg) right 0 top 16vh;
-  background-size: 44vw auto, 74vw 84vh;
+    no-repeat url(../images/bg-pattern-bottom-desktop.svg) right 0 top 125px;
+  background-size: auto auto, 90% 100vh;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-tablet) {
     background: no-repeat url(../images/bg-pattern-top-mobile.svg),
-      no-repeat url(../images/bg-pattern-bottom-mobile.svg) right 0 bottom 0vh;
+      no-repeat url(../images/bg-pattern-bottom-mobile.svg) right 0 top 125px;
     background-size: 100vw, 100vw;
   }
 }
 
 .container {
-  padding: 10vw 11.5vw;
+  margin: 113px auto;
+  max-width: 1110px;
 
-  @media (max-width: $breakpoint-mobile) {
-    width: 327px;
+  @media (max-width: $breakpoint-narrow) {
+    margin: 100px 50px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 500px;
     margin: 70px auto;
     padding: 0;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 335px;
   }
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 13vh;
+  margin-bottom: 105px;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-tablet) {
     flex-direction: column;
-    width: 327px;
     margin-bottom: 8vh;
   }
 
   &__text {
-    width: 31vw;
+    width: 425px;
 
-    @media (max-width: $breakpoint-mobile) {
+    @media (max-width: $breakpoint-tablet) {
       text-align: center;
+      align-self: center;
+      display: inherit;
+      flex-direction: column;
+      align-items: center;
     }
+    @media (max-width: $breakpoint-mobile) {
+      width: 335px;
+    }
+
     h1 {
       color: $main-color;
-      font-size: 3.5vw;
-      line-height: 3.35vw;
-      letter-spacing: -0.2vw;
+      font-size: 50px;
+      line-height: 49px;
+      letter-spacing: -3px;
 
-      @media (max-width: $breakpoint-mobile) {
+      @media (max-width: $breakpoint-tablet) {
         font-size: 31px;
         line-height: 1.9rem;
-        width: 327px;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        width: 280px;
+        letter-spacing: -2px;
       }
     }
     p {
       color: $secondary-color;
       font-weight: 500;
-      margin-top: 2.5vh;
-      line-height: 1.67vw;
-      letter-spacing: -0.02vw;
+      margin-top: 15px;
+      line-height: 24px;
+      letter-spacing: -1px;
 
-      @media (max-width: $breakpoint-mobile) {
+      @media (max-width: $breakpoint-tablet) {
         line-height: 1.4rem;
-        width: 327px;
+        max-width: 500px;
         letter-spacing: -0.02rem;
         margin: 3vh auto 5vh;
       }
@@ -86,57 +108,56 @@ body {
     flex-direction: column;
 
     .rating {
-      height: 4vw;
+      height: 55px;
       background-color: $on-main;
-      padding: 1.3vw 4.5vw 1.3vw 2.25vw;
+      padding: 20px 90px 20px 30px;
       border-radius: 0.5rem;
       display: flex;
       align-items: center;
       position: relative;
 
-      @media (max-width: $breakpoint-mobile) {
+      @media (max-width: $breakpoint-tablet) {
         height: 5rem;
         padding: 0;
         flex-direction: column;
       }
 
       &:nth-child(1) {
-        left: -6vw;
+        left: -100px;
         margin-bottom: 1rem;
 
-        @media (max-width: $breakpoint-mobile) {
+        @media (max-width: $breakpoint-narrow) {
           left: 0;
         }
       }
       &:nth-child(2) {
-        left: -3vw;
+        left: -50px;
         margin-bottom: 1rem;
 
-        @media (max-width: $breakpoint-mobile) {
+        @media (max-width: $breakpoint-narrow) {
           left: 0;
           margin-bottom: 1rem;
         }
       }
 
       .stars {
-        min-width: 6.3rem;
-        height: 100%;
+        width: 101px;
+        height: 16px;
         display: inline-block;
         background: url(../images/icon-star.svg) space center;
-        margin-right: 2.1vw;
+        margin-right: 30px;
 
-        @media (max-width: $breakpoint-mobile) {
+        @media (max-width: $breakpoint-tablet) {
           margin: 15px auto 20px;
           height: 1rem;
-          width: 5rem;
+          width: 101px;
         }
       }
       span {
-        line-height: 1.5vw;
         font-weight: 700;
         color: $main-color;
 
-        @media (max-width: $breakpoint-mobile) {
+        @media (max-width: $breakpoint-tablet) {
           text-align: center;
         }
       }
@@ -147,63 +168,81 @@ body {
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-tablet) {
     flex-direction: column;
   }
 }
 .card {
   position: relative;
-  width: 24.5vw;
+  width: 350px;
   color: hsl(0, 0%, 100%);
   background-color: $main-color;
-  padding: 2vw;
+  padding: 40px 32px;
   border-radius: 0.5rem;
-  font-size: 0.92vw;
-  line-height: 1.55vw;
+  font-size: 0.85em;
+  line-height: 22px;
 
-  @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-narrow) {
+    width: 29vw;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    display: flex;
+    align-items: center;
     flex-direction: column;
+    text-align: center;
     width: 100%;
     font-size: 13.8px;
     line-height: 1.5rem;
     padding: 40px 25px;
   }
 
+  @media (max-width: $breakpoint-mobile) {
+    text-align: unset;
+    align-items: unset;
+  }
+
   &:nth-child(1) {
-    top: -2.5vw;
-    @media (max-width: $breakpoint-mobile) {
+    top: -32px;
+
+    @media (max-width: $breakpoint-narrow) {
       top: 0;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
       margin-bottom: 10px;
     }
   }
 
   &:nth-child(2) {
-    top: -1.25vw;
-    margin-bottom: 10px;
+    top: -16px;
 
-    @media (max-width: $breakpoint-mobile) {
+    @media (max-width: $breakpoint-narrow) {
       top: 0;
+    }
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 10px;
     }
   }
 
   img {
     float: left;
     border-radius: 50%;
-    width: 3vw;
-    margin-right: 1.5vw;
+    width: 43px;
+    margin-right: 22px;
 
-    @media (max-width: $breakpoint-mobile) {
-      width: 3rem;
+    @media (max-width: $breakpoint-tablet) {
+      width: 48px;
       margin-right: 1rem;
     }
   }
 
-  &--buyer {
+  .profile-info {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.6vw;
+    margin-bottom: 23px;
 
-    @media (max-width: $breakpoint-mobile) {
+    @media (max-width: $breakpoint-tablet) {
       margin-bottom: 1.5rem;
     }
 

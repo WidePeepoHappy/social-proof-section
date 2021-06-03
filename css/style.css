@@ -9,26 +9,39 @@
 body {
   font-family: "Spartan", sans-serif;
   font-size: 15px;
-  background: no-repeat url(../images/bg-pattern-top-desktop.svg), no-repeat url(../images/bg-pattern-bottom-desktop.svg) right 0 top 16vh;
-  background-size: 44vw auto, 74vw 84vh;
+  background: no-repeat url(../images/bg-pattern-top-desktop.svg), no-repeat url(../images/bg-pattern-bottom-desktop.svg) right 0 top 125px;
+  background-size: auto auto, 90% 100vh;
 }
 
 @media (max-width: 1024px) {
   body {
-    background: no-repeat url(../images/bg-pattern-top-mobile.svg), no-repeat url(../images/bg-pattern-bottom-mobile.svg) right 0 bottom 0vh;
+    background: no-repeat url(../images/bg-pattern-top-mobile.svg), no-repeat url(../images/bg-pattern-bottom-mobile.svg) right 0 top 125px;
     background-size: 100vw, 100vw;
   }
 }
 
 .container {
-  padding: 10vw 11.5vw;
+  margin: 113px auto;
+  max-width: 1110px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    margin: 100px 50px;
+  }
 }
 
 @media (max-width: 1024px) {
   .container {
-    width: 327px;
+    max-width: 500px;
     margin: 70px auto;
     padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 335px;
   }
 }
 
@@ -39,7 +52,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 13vh;
+  margin-bottom: 105px;
 }
 
 @media (max-width: 1024px) {
@@ -48,48 +61,70 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 327px;
     margin-bottom: 8vh;
   }
 }
 
 .header__text {
-  width: 31vw;
+  width: 425px;
 }
 
 @media (max-width: 1024px) {
   .header__text {
     text-align: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    display: inherit;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__text {
+    width: 335px;
   }
 }
 
 .header__text h1 {
   color: #502050;
-  font-size: 3.5vw;
-  line-height: 3.35vw;
-  letter-spacing: -0.2vw;
+  font-size: 50px;
+  line-height: 49px;
+  letter-spacing: -3px;
 }
 
 @media (max-width: 1024px) {
   .header__text h1 {
     font-size: 31px;
     line-height: 1.9rem;
-    width: 327px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__text h1 {
+    width: 280px;
+    letter-spacing: -2px;
   }
 }
 
 .header__text p {
   color: #937b92;
   font-weight: 500;
-  margin-top: 2.5vh;
-  line-height: 1.67vw;
-  letter-spacing: -0.02vw;
+  margin-top: 15px;
+  line-height: 24px;
+  letter-spacing: -1px;
 }
 
 @media (max-width: 1024px) {
   .header__text p {
     line-height: 1.4rem;
-    width: 327px;
+    max-width: 500px;
     letter-spacing: -0.02rem;
     margin: 3vh auto 5vh;
   }
@@ -106,9 +141,9 @@ body {
 }
 
 .header__ratings .rating {
-  height: 4vw;
+  height: 55px;
   background-color: #f7f2f7;
-  padding: 1.3vw 4.5vw 1.3vw 2.25vw;
+  padding: 20px 90px 20px 30px;
   border-radius: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,22 +166,22 @@ body {
 }
 
 .header__ratings .rating:nth-child(1) {
-  left: -6vw;
+  left: -100px;
   margin-bottom: 1rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .header__ratings .rating:nth-child(1) {
     left: 0;
   }
 }
 
 .header__ratings .rating:nth-child(2) {
-  left: -3vw;
+  left: -50px;
   margin-bottom: 1rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .header__ratings .rating:nth-child(2) {
     left: 0;
     margin-bottom: 1rem;
@@ -154,23 +189,22 @@ body {
 }
 
 .header__ratings .rating .stars {
-  min-width: 6.3rem;
-  height: 100%;
+  width: 101px;
+  height: 16px;
   display: inline-block;
   background: url(../images/icon-star.svg) space center;
-  margin-right: 2.1vw;
+  margin-right: 30px;
 }
 
 @media (max-width: 1024px) {
   .header__ratings .rating .stars {
     margin: 15px auto 20px;
     height: 1rem;
-    width: 5rem;
+    width: 101px;
   }
 }
 
 .header__ratings .rating span {
-  line-height: 1.5vw;
   font-weight: 700;
   color: #502050;
 }
@@ -201,21 +235,34 @@ body {
 
 .card {
   position: relative;
-  width: 24.5vw;
+  width: 350px;
   color: white;
   background-color: #502050;
-  padding: 2vw;
+  padding: 40px 32px;
   border-radius: 0.5rem;
-  font-size: 0.92vw;
-  line-height: 1.55vw;
+  font-size: 0.85em;
+  line-height: 22px;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: 29vw;
+  }
 }
 
 @media (max-width: 1024px) {
   .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    text-align: center;
     width: 100%;
     font-size: 13.8px;
     line-height: 1.5rem;
@@ -223,43 +270,62 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .card {
+    text-align: unset;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+  }
+}
+
 .card:nth-child(1) {
-  top: -2.5vw;
+  top: -32px;
+}
+
+@media (max-width: 1200px) {
+  .card:nth-child(1) {
+    top: 0;
+  }
 }
 
 @media (max-width: 1024px) {
   .card:nth-child(1) {
-    top: 0;
     margin-bottom: 10px;
   }
 }
 
 .card:nth-child(2) {
-  top: -1.25vw;
-  margin-bottom: 10px;
+  top: -16px;
+}
+
+@media (max-width: 1200px) {
+  .card:nth-child(2) {
+    top: 0;
+  }
 }
 
 @media (max-width: 1024px) {
   .card:nth-child(2) {
-    top: 0;
+    margin-bottom: 10px;
   }
 }
 
 .card img {
   float: left;
   border-radius: 50%;
-  width: 3vw;
-  margin-right: 1.5vw;
+  width: 43px;
+  margin-right: 22px;
 }
 
 @media (max-width: 1024px) {
   .card img {
-    width: 3rem;
+    width: 48px;
     margin-right: 1rem;
   }
 }
 
-.card--buyer {
+.card .profile-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,20 +333,20 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 1.6vw;
+  margin-bottom: 23px;
 }
 
 @media (max-width: 1024px) {
-  .card--buyer {
+  .card .profile-info {
     margin-bottom: 1.5rem;
   }
 }
 
-.card--buyer .buyer-name {
+.card .profile-info .buyer-name {
   font-weight: 700;
 }
 
-.card--buyer .verified {
+.card .profile-info .verified {
   color: #ee68a4;
   font-weight: 500;
 }
